@@ -1,0 +1,27 @@
+<header class="header">
+    <div class="header_title"><a href="/">こども作品保存箱</a></div>
+    <div class="header_right">
+     
+    </div>
+</header>
+
+<!--<p id="notice"><%= notice %></p>-->
+
+<div class="contents">
+  <div class="boxs">
+   
+  <tbody>
+    <% @arts.each do |art| %>
+    <div class="art_box">
+      <tr>
+        <td><%= art.title %></td>
+        <td><%= art.comment %></td>
+        <td><%= art.grade %>学年</td>
+        <td><%= image_tag art.image if art.image.attached? %></td>
+      </tr>
+    </div>
+    <% end %>
+  </tbody>
+  
+  </div>
+</div>

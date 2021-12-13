@@ -1,0 +1,39 @@
+<%= form_with(model: art, local: true) do |form| %>
+  <% if art.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(art.errors.count, "error") %> prohibited this art from being saved:</h2>
+
+      <ul>
+        <% art.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :タイトル %>
+    <%= form.text_field :title, class: "art_title" %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, class: "art_image" %>
+  </div>
+  
+   <div class="field">
+    <%= form.label :学年 %>
+    <%= form.text_field :grade, class: "art_grade" %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :コメント %>
+    <%= form.text_area :comment, class: "art_comment" %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= form.submit "保存", class: "actions_btn art_btn" %>
+  </div>
+<% end %>

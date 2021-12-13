@@ -1,0 +1,225 @@
+@charset "utf-8";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: black;
+    /*color: white;*/
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #5f3830;
+}
+
+ul {
+    list-style: none;
+}
+
+/*ヘッダー＝＝＝＝＝＝＝＝*/
+
+.header {
+    background-color: #faa61a;
+    /*background-color: #f9e900;*/
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 17%;
+}
+.header_title {
+    font-size: 28px;
+    line-height: 100px;
+}
+.header_title a {
+    color: white;
+}
+.header_right {
+    /*background-color: #fff;*/
+    display: flex;
+    margin-top: 20px;
+}
+
+.name_select_bta {
+    margin-left: 50px;
+}
+
+
+/*ボタン＝＝＝*/
+.name_ently_btn,
+.name_select_bta,
+.top_page_btn,
+.user_page_btn,
+.new_aat_bta {
+    background-color: #faa61a;
+    height: 60px;
+    width: 60px;
+    padding: 10px;
+    border: 1px solid #8c3003;
+    box-shadow: 0 2px #8c3003;
+    color: #5f3830;
+}
+/*トップページ＝＝＝＝＝*/
+.contents {
+    background-color: #fff8cf;
+    height: calc(100% - 100px);
+}
+.boxs {
+    padding: 30px;
+}
+.art_box {
+    background-color: #a6ce39;
+    margin: 0 15% 20px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+/*art_box編集＝＝＝＝＝*/
+.left_title {
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.left_title,
+.left_grade {
+    margin-bottom: 20px;
+}
+
+.left_comment {
+    margin-bottom: 50px;
+}
+
+.left_btn {
+    /*background-color: pink;*/
+    display: flex;
+}
+
+.edit_btn,
+.delete_btn {
+    background-color: #28a44a;
+    height: 40px;
+    width: 75px;
+    padding: 10px;
+    /*border: 1px solid #28a44a;*/
+    box-shadow: 0 2px #5f3830;
+}
+
+
+.edit_btn {
+    margin-right: 20px;
+}
+
+
+
+
+/*作品投稿,編集画面＝＝＝＝＝*/
+.container {
+    background-color: #fff8cf;
+    padding-top: 30px;
+    height: calc(100vh - 100px)
+}
+
+.art_container {
+    background-color: #a6ce39;
+    margin: 0 auto;
+    padding: 50px;
+    height: 620px;
+    width: 500px;
+}
+.sub_title {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/*_form＝＝＝＝＝*/
+.field {
+    /*background-color: pink;*/
+    height: 80px;
+    padding: 10px;
+    font-size: 14px;
+}
+.actions {
+    /*background-color: tomato;*/
+    margin-top: 50px;
+    text-align: center;
+}
+
+.art_title,
+.art_grade,
+.art_comment,
+.art_btn {
+    padding: 10px;
+    border-style: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.art_title,
+.art_grade {
+    height: 40px;
+}
+
+.art_title,
+.art_comment {
+    width: 400px;
+}
+.actions_btn {
+    background-color: #faa61a;
+    width: 120px;
+    box-shadow: 0 2px #8c3003;
+}
+
+ /*お名前登録＝＝＝＝＝*/
+.name_container {
+    background-color: #a6ce39;
+    margin: 0 auto;
+    padding: 50px;
+    height: 300px;
+    width: 500px;
+}
+
+.name_name,
+.name_btn {
+    padding: 10px;
+    border-style: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.field_name {
+    /*background-color: pink;*/
+    height: 80px;
+    padding: 10px;
+    text-align: center;
+}
+.name_name {
+    height: 40px;
+    width: 400px;
+    margin-top: 20px;
+}
+
+
+/*個別一覧ページ＝＝＝＝＝*/
+.user_page_box {
+    /*background-color: pink;*/
+    display: flex;
+    justify-content: space-around;
+    height: 60px;
+    margin: 0 15%;
+    padding: 20px;
+}
+
+.user_page_title {
+    font-size: 20px;
+    margin: 20px 0;
+    color: #5f3830;
+}
+.user_page_btn {
+    margin-left: 50%;
+}
