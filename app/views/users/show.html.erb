@@ -1,0 +1,55 @@
+<header class="header">
+    <div class="header_title"><a href="/">こども作品保存箱</a></div>
+    <div class="header_right">
+      <div class="top_page_btn"><a href="/">top page</a></div>
+    </div>
+</header>
+
+<div class="contents">
+    <div class="user_page_box">
+        <h2 class="user_page_title">
+            <%= @user.name%>の作品集
+        </h2>
+        <div class="user_page_btn">
+            <%= link_to "New Art", "/users/#{@user.id}/arts/new" %>
+        </div>
+    </div>
+
+    <div class="boxs">
+        
+          <tbody>
+            <% @arts.each do |art| %>
+            <div class="art_box">
+              <tr>
+                <div class="art_box_left">
+                  <div class="left_title">
+                    <td><%= art.title %></td>
+                  </div>
+                  <div class="left_grade">
+                    <td><%= art.grade %>学年 作成</td> 
+                  </div>
+                  <div class="left_comment">
+                    <td><%= art.comment %></td>
+                  </div>
+                  <div class="left_btn">
+                      <div class="edit_btn">
+                          <%= link_to "Edit", "/users/#{art.user_id}/arts/#{art.id}/edit" %>
+                      </div>
+                      
+                      <div class="delete_btn">
+                          <%= link_to "Delete", "/users/#{art.user_id}/arts/#{art.id}", method: :delete, data: {confirm: 'Are you sure?'} %>
+                      </div>
+                  </div>
+                  
+                  
+                </div>
+                <div class="art_box_right">
+                    <td><%= image_tag art.image if art.image.attached? %></td>
+                </div>
+              </tr>
+            </div>
+            <% end %>
+          </tbody>
+          
+    </div>
+</div> 

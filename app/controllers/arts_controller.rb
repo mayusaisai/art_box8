@@ -1,28 +1,32 @@
 class ArtsController < ApplicationController
-  before_action :set_art, only: %i[ show edit update destroy ]
+  before_action :set_art, only: %i[  ]
 
   # GET /arts or /arts.json
   def index
     @arts = Art.order("created_at DESC")
+    @users = User.all
   end
 
   # GET /arts/1 or /arts/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /arts/new
   def new
     @art = Art.new
+    @user = User.find(params[:user_id])
   end
 
   # GET /arts/1/edit
   def edit
+    @user = User.find(params[:user_id])
+    @art = @user.arts.find(params[:id])
   end
 
   # POST /arts or /arts.json
   def create
-    
-    @art = Art.new(art_params)
+    @user = User.find(params[:user_id])
+    @art = @user.arts.create(art_params)
 
     respond_to do |format|
       if @art.save
@@ -37,6 +41,9 @@ class ArtsController < ApplicationController
 
   # PATCH/PUT /arts/1 or /arts/1.json
   def update
+    @user = User.find(params[:user_id])
+    @art = @user.arts.find(params[:id])
+    
     respond_to do |format|
       if @art.update(art_params)
         format.html { redirect_to "/", notice: "Art was successfully updated." }
@@ -50,6 +57,9 @@ class ArtsController < ApplicationController
 
   # DELETE /arts/1 or /arts/1.json
   def destroy
+    @user = User.find(params[:user_id])
+    @art = @user.arts.find(params[:id])
+    
     @art.destroy
     respond_to do |format|
       format.html { redirect_to "/", notice: "Art was successfully destroyed." }

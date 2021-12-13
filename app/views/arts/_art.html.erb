@@ -1,0 +1,28 @@
+<div class="contents">
+  <div class="boxs">
+   
+  <tbody>
+    <% arts.each do |art| %>
+    <div class="art_box">
+      <tr>
+        <div class="art_box_left">
+          <div class="left_title">
+            <td><%= art.title %></td>
+          </div>
+          <div class="left_grade">
+            <td><%= art.grade %>学年 作成</td>
+          </div>
+          <div class="left_comment">
+            <td><%= art.comment %></td>
+          </div>
+        </div>
+        <div class="art_box_right">
+            <td><%= image_tag art.image if art.image.attached? %></td>
+        </div>
+      </tr>
+    </div>
+    <% end %>
+  </tbody>
+  
+  </div>
+</div>

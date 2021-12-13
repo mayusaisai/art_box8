@@ -7,11 +7,10 @@
 <div class="container">
     <div class="art_container">
         
-<h2 class="sub_title">New Art</h1>
+<h2 class="sub_title">New Art</h2>
         
-<%= render 'form', art: @art %>
+<%= render 'form', {user: @user, art: @art} %>
 
-<%= link_to 'Back', arts_path %>
 
     </div>
 </div>
